@@ -68,7 +68,7 @@ function createParticipantToken(
   roomName: string,
   agentName?: string
 ): Promise<string> {
-  const at = new AccessToken(API_KEY, API_SECRET, {
+  const accessToken = new AccessToken(API_KEY, API_SECRET, {
     ...userInfo,
     ttl: '15m',
   });
@@ -79,13 +79,13 @@ function createParticipantToken(
     canPublishData: true,
     canSubscribe: true,
   };
-  at.addGrant(grant);
+  accessToken.addGrant(grant);
 
   if (agentName) {
-    at.roomConfig = new RoomConfiguration({
+    accessToken.roomConfig = new RoomConfiguration({
       agents: [{ agentName }],
     });
   }
 
-  return at.toJwt();
+  return accessToken.toJwt();
 }
