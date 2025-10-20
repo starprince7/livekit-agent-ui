@@ -3,11 +3,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Room, RoomEvent } from 'livekit-client';
 import { motion } from 'motion/react';
-import { RoomAudioRenderer, RoomContext, StartAudio } from '@livekit/components-react';
+import { RoomAudioRenderer, RoomContext, StartAudio, LiveKitRoom } from '@livekit/components-react';
+
+// components
 import { toastAlert } from '@/components/alert-toast';
 import { SessionView } from '@/components/session-view';
 import { Toaster } from '@/components/ui/sonner';
 import { Welcome } from '@/components/welcome';
+// hooks
 import useConnectionDetails from '@/hooks/useConnectionDetails';
 import type { AppConfig } from '@/lib/types';
 
@@ -90,7 +93,7 @@ export function App({ appConfig }: AppProps) {
       />
 
       <RoomContext.Provider value={room}>
-        <RoomAudioRenderer />
+        <RoomAudioRenderer /> 
         <StartAudio label="Start Audio" />
         {/* --- */}
         <MotionSessionView

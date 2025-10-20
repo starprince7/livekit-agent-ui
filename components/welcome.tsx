@@ -37,8 +37,11 @@ export const Welcome = ({
       </svg>
 
       <p className="text-fg1 max-w-prose pt-1 leading-6 font-medium">
-        Chat live with your <b>voice AI agent</b> for <b className="font-bold text-xl">DermaVixuals MedSpa</b>
+        Live voice chat with <b>Prince's</b> AI agent <b className="text-xl font-bold">Rebecca</b>
       </p>
+      <br />
+      <p>To test:</p>
+      <p>- Request that she writes a good resignation letter and sends it to your email.</p>
       <Button variant="primary" size="lg" onClick={onStartCall} className="mt-6 w-64 font-mono">
         {startButtonText}
       </Button>
